@@ -9,7 +9,8 @@ require File.join(File.dirname(__FILE__), '../src/JsCat')
 javascript = JsCat.new({
   :js_dir => 'scripts',
   :compress => 'true', #uses & requires "yui/compressor"
-  :prioritize => ['framework.js'],
+  :prioritize => ['framework.js'], #push scripts to the top
+  :ignore => ["script_c.js"], #opt-out any scripts
   :output => "output/javascript.js"
 })
 puts javascript.js

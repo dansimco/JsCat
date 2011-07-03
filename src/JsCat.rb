@@ -5,12 +5,18 @@ class JsCat
     @compress = params[:compress] || false
     @output   = params[:output] || false
     @priority_files = params[:prioritize] || false
+    @ignore_files = params[:ignore] || false
     require "yui/compressor" if @compress
     render_js
     write_js if @output
   end
   def list_scripts
     @scripts = Dir.glob("#{@js_dir}/*.js")
+    if @ignore_files then
+      @ignore_files.uniq.each {|file|
+        @scripts.delete(@js_dir+'/'+file)
+      }
+    end
     if @priority_files then    
       @priority_files_full = []
       @priority_files.uniq.each {|file|
