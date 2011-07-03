@@ -3,9 +3,11 @@ class JsCat
   def initialize(params = {})
     @js_dir   = params[:js_dir] || "public"
     @compress = params[:compress] || false
+    @output   = params[:output] || false
     @priority_files = params[:prioritize] || false
     require "yui/compressor" if @compress
     render_js
+    write_js if @output
   end
   def list_scripts
     @scripts = Dir.glob("#{@js_dir}/*.js")
@@ -54,7 +56,7 @@ class JsCat
      return @js
   end
   def write_js
-    File.open("public/resources/javascript.js",'w') { |f| 
+    File.open(@output,'w') { |f| 
       f.write(@js) 
     }
   end
