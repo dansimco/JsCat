@@ -4,13 +4,14 @@ JsCat is a ruby handler to load, concatenate and compress a directory of javascr
 
 ##Usage
 
-require File.join(File.dirname(__FILE__), '../src/JsCat')
+    require File.join(File.dirname(__FILE__), '../src/JsCat')
 
-javascript = JsCat.new({
-  :js_dir => 'scripts',
-  :compress => 'true', #uses & requires "yui/compressor"
-  :prioritize => ['framework.js'], #push scripts to the top
-  :ignore => ["script_c.js"], #opt-out any scripts
-  :output => "output/javascript.js"
-})
-puts javascript.js
+    javascript = JsCat.new({
+      :js_dir => 'scripts',             #read javascript files from this directory
+      # :compress => 'true',            #uses/requires yui/compressor
+      :prioritize => ['framework.js'],  #puts framework.js at the top of the file
+      :ignore => ["script_c.js"],       #dont include these files 
+      :output => "output/javascript.js" #write the file here
+    })
+
+    puts javascript.js
