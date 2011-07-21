@@ -15,3 +15,6 @@ JsCat is a ruby handler to load, concatenate and compress a directory of javascr
     })
 
     puts javascript.js
+
+
+See also [FilesToJs](https://github.com/danielsim/FilesToJs), which takes a directory of plain text files and presents them inside a global javascript object in a single request. 
