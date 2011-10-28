@@ -1,0 +1,24 @@
+= jscat
+
+Grabs all the javascript files in a directory and smooshes them into a single file for caching & transfer. Optional YUI compression, file order prioritisation and ignore list (so you don't recursively add the output to itself)
+
+Do this:
+
+  javascript = JsCat.new({
+    :js_dir => 'scripts',             # read javascript files from this directory
+    :compress => 'true',              # uses/requires yui/compressor
+    :prioritize => ['framework.js'],  # puts framework.js at the top of the file
+    :ignore => ["script_c.js"],       # files to ignore 
+    :output => "output/javascript.js" # write the compressed javsascript here
+  })
+
+Get this:
+
+  var Framework={};function script_a(){alert("I am script a")}function script_b(){alert("I am script b")};
+
+
+== Copyright
+
+Copyright (c) 2011 Daniel Sim. See LICENSE.txt for
+further details.
+
