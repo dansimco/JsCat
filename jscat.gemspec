@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "jscat"
-  s.version = "1.0.0"
+  s.version = "1.0.1"
   s.authors = ["Daniel Sim"]
   s.date = %q{2011-10-28}
   s.description = 'Joins and compresses a directory of javascript files to a single file'
