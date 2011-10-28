@@ -19,6 +19,5 @@ Get this:
 
 == Copyright
 
-Copyright (c) 2011 Daniel Sim. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Daniel Sim
 
