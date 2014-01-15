@@ -15,9 +15,3 @@ Do this:
 Get this:
 
   var Framework={};function script_a(){alert("I am script a")}function script_b(){alert("I am script b")};
-
-
-== Copyright
-
-Copyright (c) 2011 Daniel Sim
-
